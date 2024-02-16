@@ -1,0 +1,16 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+{{- if .Values.subscription.labels }}
+  {{- toYaml .Values.subscription.labels | nindent 4 }}
+{{- end }}
+    {{ print "operators.coreos.com/" .Values.subscription.channel "." .Values.namespace }}: ""
+  name: {{ .Values.name}}
+  namespace: {{ .Values.namespace}}
+spec:
+  channel: {{ .Values.subscription.channel}}
+  installPlanApproval: {{ .Values.subscription.installPlanApproval}}
+  name: {{ .Values.name}}
+  source: {{ .Values.subscription.source}}
+  sourceNamespace: {{ .Values.subscription.sourceNamespace}}
