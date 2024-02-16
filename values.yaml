@@ -9,8 +9,7 @@ group:
   targetNamespaces:
 
 plan:
-  approved: true
-  
+
 subscription:
   channel:
   installPlanApproval: 
