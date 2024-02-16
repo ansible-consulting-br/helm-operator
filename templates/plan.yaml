@@ -1,3 +1,4 @@
+{{- if .Values.plan }}
 apiVersion: operators.coreos.com/v1alpha1
 kind: InstallPlan
 metadata:
@@ -5,3 +6,4 @@ metadata:
   namespace: {{ .Values.namespace}}
 spec:
   approved: true
+{{- end }}
