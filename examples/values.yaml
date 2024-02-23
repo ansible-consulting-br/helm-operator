@@ -7,14 +7,19 @@ namespace: "3scale-apimanager"
 
 group:
   targetNamespaces:
+    - a
+    - b
+    - c 
 
 plan:
-  enabled: false
-  name: "xpto"
+  name: "operator-plan-name"
 
 subscription:
   channel: "threescale-2.13"
-  installPlanApproval: "Manual"
+  installPlanApproval: "Automatic"
   source:  "redhat-operators"
   sourceNamespace: "openshift-marketplace"
   labels:
+    a: a
+    b: b
+    c: c

@@ -1,9 +1,9 @@
-{{- if .Values.plan }}
+{{- if and .Values.plan (ne .Values.plan.name "") }}
 apiVersion: operators.coreos.com/v1alpha1
-kind: InstallPlan
+kind: InstallPl
 metadata:
   name: {{ .Values.plan.name }}
-  namespace: {{ .Values.namespace}}
+  namespace: {{ .Values.namespace }}
 spec:
   approved: true
 {{- end }}

@@ -6,6 +6,8 @@ metadata:
 spec:
   targetNamespaces:
     - {{ .Values.namespace }}
+    {{- if .Values.group.targetNamespaces }}
     {{- range .Values.group.targetNamespaces }}
     - {{ . }}
+    {{- end }}
     {{- end }}
