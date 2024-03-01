@@ -1,6 +1,6 @@
-{{- if and .Values.plan (ne .Values.plan.name "") }}
+{{- if and .Values.plan }}
 apiVersion: operators.coreos.com/v1alpha1
-kind: InstallPl
+kind: InstallPlan
 metadata:
   name: {{ .Values.plan.name }}
   namespace: {{ .Values.namespace }}
